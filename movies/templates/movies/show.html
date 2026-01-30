@@ -48,6 +48,14 @@
               Delete
             </a>
             {% endif %}
+            <!-- FOR THE REVIEWS, COPIED THE THE FUNCTION ABOVE -->
+            {% if user.is_authenticated and user != review.user %}
+            <a class="btn btn-warning"
+              href="{% url 'movies.report_review' id=template_data.movie.id review_id=review.id %}"
+              onclick="">
+              Report
+            </a>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
